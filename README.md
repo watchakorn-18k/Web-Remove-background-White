@@ -5,24 +5,22 @@
 # Setup
 ```
 git clone https://github.com/watchakorn-18k/Web-Remove-background-White.git
+cd Web-Remove-background-White
 ```
 
 
 
 # Install Package 
-* USE VIRTUALENV
-#UNIX
+## UNIX
 ```
 virtualenv env
 source env/Scripts/activate
+pip install -r requirements.txt
 ```
-#WINDOWS
+## WINDOWS
 ```
 virtualenv env
 .\env\Scripts\activate
-```
-
-```
 pip install -r requirements.txt
 ```
 
