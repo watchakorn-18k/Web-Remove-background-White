@@ -7,5 +7,4 @@ Jinja2==3.0.3
 MarkupSafe==2.0.1
 numpy==1.22.2
 opencv-python==4.5.5.62
-pytube @ git+https://github.com/pytube/pytube@56ccab4f9cbfa989c418e93a42ef00b424fc05f4
 Werkzeug==2.0.3
