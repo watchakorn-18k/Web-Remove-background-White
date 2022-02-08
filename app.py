@@ -3,6 +3,7 @@ import numpy as np
 from flask import Flask, render_template,request
 import os
 import shutil
+
 # load image
 
 
@@ -39,7 +40,9 @@ def removeImg(ImgOrinal):
     # save resulting masked image
     cv2.imwrite('static/test1.png', result)
     shutil.rmtree('upload')
-    os.makedirs('upload')
+    os.mkdir('upload')
+    
+    
     # # display result, though it won't show transparency
     # cv2.imshow("INPUT", img)
     # cv2.imshow("GRAY", gray)
@@ -48,6 +51,7 @@ def removeImg(ImgOrinal):
     # cv2.waitKey(0)
     # cv2.destroyAllWindows()
 
+
 UPLOAD_FOLDER = './upload'
 
 app = Flask(__name__)
@@ -55,21 +59,23 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
-    try:
-        if request.method == 'POST':
-            if 'file1' not in request.files:
-                return 'there is no file1 in form!'
-            file1 = request.files['file1']
-            path = os.path.join(app.config['UPLOAD_FOLDER'], file1.filename)
-            file1.save(path)
-            removeImg(path)
-            return render_template('showImg.html')
-    except:
-        return render_template('index.html')
-        
+      
+      if request.method == 'POST':
+          if 'file1' not in request.files:
+              return 'there is no file1 in form!'
+          file1 = request.files['file1']
+          if os.path.isdir('upload') == False:
+            os.mkdir('upload')
+          path = os.path.join(app.config['UPLOAD_FOLDER'], file1.filename)
+          file1.save(path)
+          removeImg(path)
+          return render_template('showImg.html')
+      return render_template('index.html')
+      
 
-    return render_template('index.html')
+  
 
 if __name__ == "__main__":
-    app.run()
+    
+    app.run(host='0.0.0.0',port='8080')
 # removeImg(ImgOrinal='test.png')
