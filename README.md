@@ -9,7 +9,7 @@ https://web-remove-background-white.watchakorn18k.repl.co/
 
 <p align="center">
 <img src="https://github.com/watchakorn-18k/Web-Remove-background-White/blob/master/Image-Test.jpg" width="200">
-<img src="https://github.com/watchakorn-18k/Web-Remove-background-White/blob/master/static/test1.png" width="200">
+<img src="https://github.com/watchakorn-18k/Web-Remove-background-White/blob/master/static/test12.png" width="200">
 </p>
 
 # Setup
