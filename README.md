@@ -4,7 +4,7 @@
 
 
 # Example 
-https://web-remove-background-white.watchakorn18k.repl.co/
+test in replit : https://replit.com/join/exxfwuozad-watchakorn18k
 
 
 <p align="center">
