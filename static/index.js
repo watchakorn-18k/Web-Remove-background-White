@@ -2,9 +2,6 @@
 // 
 function ekUpload(){
     function Init() {
-  
-      console.log("Upload Initialised");
-  
       var fileSelect    = document.getElementById('file-upload'),
           fileDrag      = document.getElementById('file-drag'),
           submitButton  = document.getElementById('submit-button');

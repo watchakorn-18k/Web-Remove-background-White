@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from flask import Flask, render_template,request
+from flask import Flask, render_template,request,send_file
 import os
 import shutil
 
@@ -53,7 +53,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
-
+    
     try:
         if request.method == 'POST':
             if 'fileUpload' not in request.files:
@@ -68,5 +68,14 @@ def upload_file():
         
 
     return render_template('index.html')
+
+@app.route('/downloadImg') # this is a job for GET, not POST
+def download_img():
+    return send_file('static/test1.png',
+                     mimetype='image/png',
+                     attachment_filename='test1.png',
+                     as_attachment=True)
+
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',port='8080')
+    # app.run(host='0.0.0.0',port='8080')
+    app.run(debug=True)
