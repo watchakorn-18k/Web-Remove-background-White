@@ -5,28 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image</title>
-    <style>
-        #back {
-            color: #fff;
-            font-size: 20px;
-            background: #0069c4;
-            padding: 20px;
-            border: 1px solid;
-            border-radius: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="../static/index.css">
+    <link rel="icon" href="../static/icon.png" type="image/icon type">
+    <title>Test Remove Background</title>
+
 
 </head>
 
 <body>
-    <center>
-        <div style="background-color:#ceefee">
-            <img src="../static/test1.png" width="500">
+    <h2>Test Remove Background <span style="color:tomato;font-size:20px">White</span></h2>
+    <p class="lead">It's just a test picture may not work perfectly</p>
+    <form class="uploader">
+        <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+        <div class="labels">
+            <div id="start">
+                <img id="file-image" src="../static/test1.png" alt="Preview">
+            </div>
+            <a href="/"><button class="btn-back" type="submit">Back To Main</button></a>
         </div>
-        <br>
-        <a href="/"><button id="back">กลับ</button></a>
-    </center>
+        <p class="lead">dev website by<a href="https://github.com/watchakorn-18k" target="_blank">wk-18k </a></p>
+    </form>
 </body>
 
 </html>

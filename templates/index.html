@@ -5,83 +5,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap');
-
-        * {
-            font-family: 'Prompt', sans-serif;
-        }
-
-        .inputfile-box {
-            position: relative;
-        }
-
-        .inputfile {
-            display: none;
-        }
-
-        .container {
-            display: inline-block;
-            width: 100%;
-        }
-
-        .file-box {
-            display: inline-block;
-            width: 40%;
-            border: 1px solid;
-            padding: 5px 0px 5px 5px;
-            box-sizing: border-box;
-            height: calc(2rem - 2px);
-            border-radius: 20px 0 0 20px;
-        }
-
-        .file-button {
-            background: #0069c4;
-            padding: 2px;
-            position: absolute;
-            border: 1px solid;
-            width: 10rem;
-            border-radius: 0 20px 20px 0;
-
-        }
-
-        #process {
-            color: #fff;
-            font-size: 20px;
-            background: #0069c4;
-            padding: 20px;
-            border: 1px solid;
-            border-radius: 20px;
-        }
-    </style>
+    <link rel="icon" href="../static/icon.png" type="image/icon type">
+    <link rel="stylesheet" href="../static/index.css">
+    <title>Remove Background White</title>
 </head>
 
 <body>
-    <center style="margin: 10% 0;">
-        <h1>ลบพื้นหลังสีขาว</h1>
-        <form method="post" enctype="multipart/form-data">
-            <div class="inputfile-box">
-                <input type="file" id="file" name="file1" class="inputfile" onchange='uploadFile(this)'>
-                <label for="file">
-                    <span id="file-name" class="file-box"></span>
-                    <span class="file-button">
-                        <i class="fa fa-upload" aria-hidden="true"></i>
-                        เลือกไฟล์
-                    </span>
-                </label>
+    <h2>Upload File For Test Remove Background <span style="color:tomato;font-size:20px">White</span></h2>
+    <p class="lead">Only images with <b> white background images are supported</b></p>
+    <form method="post" enctype="multipart/form-data" id="file-upload-form" class="uploader">
+        <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+
+        <label for="file-upload" id="file-drag">
+            <img id="file-image" src="#" alt="Preview" class="hidden">
+            <div id="start">
+                <i class="fa fa-download" aria-hidden="true"></i>
+                <div>Select a file or drag here</div>
+                <div id="notimage" class="hidden">Please select an image</div>
+                <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+            </div>
+            <div id="response" class="hidden">
+                <div id="messages"></div>
+                <button class="btn btn-primary" type="submit">Process Image</button>
             </div>
 
-            <button type="submit" id="process">ประมวลผล</button>
 
-        </form>
-    </center>
-
-    <script>
-        const uploadFile = (target) => {
-            document.getElementById("file-name").innerHTML = target.files[0].name;
-        }
-    </script>
+        </label>
+        <p class="lead">dev website by<a href="https://github.com/watchakorn-18k" target="_blank">wk-18k </a></p>
+    </form>
+    <script src="../static/index.js"></script>
 </body>
 
 </html>

@@ -40,13 +40,6 @@ def removeImg(ImgOrinal):
     cv2.imwrite('static/test1.png', result)
     shutil.rmtree('upload')
     os.makedirs('upload')
-    # # display result, though it won't show transparency
-    # cv2.imshow("INPUT", img)
-    # cv2.imshow("GRAY", gray)
-    # cv2.imshow("MASK", mask)
-    # cv2.imshow("RESULT", result)
-    # cv2.waitKey(0)
-    # cv2.destroyAllWindows()
 
 UPLOAD_FOLDER = './upload'
 
@@ -57,9 +50,9 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def upload_file():
     try:
         if request.method == 'POST':
-            if 'file1' not in request.files:
+            if 'fileUpload' not in request.files:
                 return 'there is no file1 in form!'
-            file1 = request.files['file1']
+            file1 = request.files['fileUpload']
             path = os.path.join(app.config['UPLOAD_FOLDER'], file1.filename)
             file1.save(path)
             removeImg(path)
