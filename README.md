@@ -47,6 +47,12 @@ start.sh        # service on run startup in ubuntu
 ```
 
 # Add Service in Ubuntu
+
+## Add PATH service
+```
+/etc/systemd/system/RemoveStartUp.service
+```
+
 ## RemoveStartUp.service
 ```
 [Unit]
