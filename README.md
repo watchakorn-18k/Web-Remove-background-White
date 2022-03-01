@@ -5,7 +5,7 @@
 
 # Example 
 - test in replit : https://replit.com/join/exxfwuozad-watchakorn18k
-- website : https://Web-Remove-background-White.watchakorn18k.repl.co
+- website : http://wk18k.zapto.org:5000/
 
 
 <p align="center">
@@ -22,10 +22,10 @@ cd Web-Remove-background-White
 
 
 # Install Package 
-## UNIX
+## UBUNTU
 ```
 virtualenv env
-source env/Scripts/activate
+source env/bin/activate
 pip install -r requirements.txt
 ```
 ## WINDOWS
@@ -38,6 +38,26 @@ pip install -r requirements.txt
 # Start Server
 ```
 python app.py
+```
+
+# File Settings
+```
+start.sh        # service on run startup in ubuntu
+.replit         # file run on replit
+```
+
+# Add Service in Ubuntu
+## RemoveStartUp.service
+```
+[Unit]
+Description = Remove BG White
+
+[Service]
+ExecStart = bash /usr/local/sbin/start.sh
+
+
+[Install]
+WantedBy = multi-user.target
 ```
 
 # Credits
