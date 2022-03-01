@@ -39,9 +39,8 @@ def removeImg(ImgOrinal):
 
     # save resulting masked image
     cv2.imwrite('static/test1.png', result)
-    shutil.rmtree('upload')
-
-    os.makedirs('upload')
+    
+    
 
 
 
@@ -53,7 +52,10 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
-    
+    if os.listdir('upload'):
+        shutil.rmtree('upload')
+        os.mkdir('upload')
+
     try:
         if request.method == 'POST':
             if 'fileUpload' not in request.files:
@@ -77,5 +79,5 @@ def download_img():
                      as_attachment=True)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',port='8080')
+    app.run(host='0.0.0.0',port='5000')
     # app.run(debug=True)
